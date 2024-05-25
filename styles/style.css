@@ -2,4 +2,130 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--bg-color);
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  font-weight: var(--accent-font-weight);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  border-width: 0px;
+  border-block-start-width: 1px;
+  border-inline-end-width: 1px;
+  border-style: solid;
+  border-color: var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  border-width: 0px;
+  border-block-end-width: 1px;
+  border-inline-start-width: 1px;
+  border-style: solid;
+  border-color: var(--accent-color);
+}
+
+.decorated-zone__text {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+}
+
+.decorated-zone__text::before {
+  content: 'rec';
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.decorated-zone__text::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 8px 9px 0px 10px;
+  background: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  border-radius: 50%;
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color);
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 70px;
+  height: 26px;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
+  margin-block-end: -1px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  justify-self: end;
+  align-self: center;
+}
+
+.header__paragraph {
+  color: var(--description-color);
+  font-weight: var(--accent-font-weight);
+  line-height: 130%;
 }
