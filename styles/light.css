@@ -4,9 +4,56 @@
   переключая тему
 */
 
-.page.theme_light {
+/*.page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
+.page.theme_light {
+  --title-color: #ffc2e6;
+  --description-color: #353430;
+  --main-text-color: #353430;
+  --accent-color: #ff8dcb;
+  --accent-bg-color: #ff8dcb;
+  --accent-details-color: #353430;
+  --bg-image: url(../images/cover-image-light.png);
+  --bg-color: #ffc2e6;
+  --display-dark: none;
+}
+
+/* Остальные стили */
+
+@media (prefers-color-scheme: light) {
+  .page {
+    --title-color: #ffc2e6;
+    --description-color: #353430;
+    --main-text-color: #353430;
+    --accent-color: #ff8dcb;
+    --accent-bg-color: #ff8dcb;
+    --accent-details-color: #353430;
+    --bg-image: url(../images/cover-image-light.png);
+    --bg-color: #ffc2e6;
+    --display-dark: none;
+  }
+}
+
+@media (width >= 1024px) and (prefers-color-scheme: light) {
+  .header__title {
+    text-shadow: 4px 4px 0 #ff0070;
+  }
+
+  .footer__title {
+    text-shadow: 2px 2px 0 #ff0070;
+  }
+}
+
+@media (width >= 1024px) {
+  .page.theme_light .header__title {
+    text-shadow: 4px 4px 0 #ff0070;
+  }
+
+  .page.theme_light .footer__title {
+    text-shadow: 2px 2px 0 #ff0070;
+  }
 }

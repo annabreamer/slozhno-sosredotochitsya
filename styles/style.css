@@ -1,30 +1,30 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  height: 100%;
+  background-color: var(--bg-color);
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: var(--bg-image);
-  background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  background-color: var(--bg-color);
-  height: 100%;
+  background-attachment: fixed;
 }
 
 .header {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  padding: 10px;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  width: 100%;
+  height: 100vh;
+  padding: var(--decorated-zone-padding);
 }
 
 .header__title {
   color: var(--title-color);
+  font-weight: var(--accent-font-weight);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-  font-weight: var(--accent-font-weight);
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
@@ -33,13 +33,13 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
   border-width: 0px;
-  border-block-start-width: 1px;
-  border-inline-end-width: 1px;
   border-style: solid;
-  border-color: var(--accent-color);
+  border-color: var(--accent-details-color);
+  border-inline-end-width: 1px;
+  border-block-start-width: 1px;
+  inset-block-start: var(--decorated-zone-padding);
+  inset-inline-end: var(--decorated-zone-padding);
 }
 
 .decorated-zone::after {
@@ -47,41 +47,42 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
   border-width: 0px;
-  border-block-end-width: 1px;
-  border-inline-start-width: 1px;
   border-style: solid;
-  border-color: var(--accent-color);
+  border-color: var(--accent-details-color);
+  border-inline-start-width: 1px;
+  border-block-end-width: 1px;
+  inset-block-end: var(--decorated-zone-padding);
+  inset-inline-start: var(--decorated-zone-padding);
 }
 
 .decorated-zone__text {
   position: absolute;
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  display: var(--display-dark);
+  inset-block-start: var(--decorated-zone-padding);
+  inset-inline-end: var(--decorated-zone-padding);
 }
 
 .decorated-zone__text::before {
-  content: 'rec';
-  color: var(--accent-color);
+  content: "rec";
+  color: var(--accent-details-color);
   text-transform: uppercase;
 }
 
 .decorated-zone__text::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 9px;
   height: 9px;
   margin: 8px 9px 0px 10px;
-  background: var(--accent-color);
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
   border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-details-color);
+  background: var(--accent-details-color);
 }
 
 .header__theme-menu {
-  align-self: center;
   justify-self: end;
+  align-self: center;
 }
 
 .header__theme-menu-list {
@@ -91,18 +92,18 @@
 }
 
 .header__theme-menu-button {
-  color: var(--accent-color);
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
   width: 70px;
   height: 26px;
+  border: none;
+  color: var(--accent-details-color);
   text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-  pointer-events: none;
   outline: 1px solid currentColor;
+  pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
@@ -114,18 +115,65 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid currentColor;
   margin-block-end: -1px;
+  border-block-end: 1px solid currentColor;
 }
 
 .title-decor {
-  background-color: var(--accent-color);
+  flex-wrap: wrap;
   justify-self: end;
   align-self: center;
+  background-color: var(--accent-bg-color);
 }
 
 .header__paragraph {
   color: var(--description-color);
   font-weight: var(--accent-font-weight);
   line-height: 130%;
+}
+
+@media (width >= 768px) {
+  .title-decor {
+    width: 50%;
+  }
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  padding: var(--decorated-zone-padding);
+}
+
+.footer__title {
+  justify-self: center;
+  align-self: center;
+  color: var(--title-color);
+  font-weight: var(--accent-font-weight);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >= 768px) {
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  .page {
+    --decorated-zone-padding: 20px;
+  }
 }
