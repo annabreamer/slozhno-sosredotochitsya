@@ -12,7 +12,7 @@
   --accent-bg-color: #ff8dcb;
   --accent-details-color: #353430;
   --bg-image: url(../images/cover-image-light.png);
-  --bg-color: #ffc2e6;
+  --bg-color: #FFF1F7;
   --display-dark: none;
 }
 
@@ -27,7 +27,7 @@
     --accent-bg-color: #ff8dcb;
     --accent-details-color: #353430;
     --bg-image: url(../images/cover-image-light.png);
-    --bg-color: #ffc2e6;
+    --bg-color: #FFF1F7;
     --display-dark: none;
   }
 }
