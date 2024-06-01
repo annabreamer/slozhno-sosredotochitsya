@@ -7,14 +7,16 @@
   --description-color: #000028;
   --main-text-color: #f1b2ce;
   --accent-color: #ff0070;
-  --accent-bg-color: #ff0070;
-  --accent-details-color: #ff0070;
+  --accent-bg-color: var(--accent-color);
+  --accent-details-color: var(--accent-color);
+  --title-shadow-color: var(--accent-color);
   --accent-font-weight: Bold;
   --main-font-weight: Normal;
   --bg-image: url(../images/cover-image-dark.png);
-  --bg-color: #000028;
+  --bg-color: var(--description-color);
   --display-dark: block;
   --decorated-zone-padding: 10px;
   --content-title-padding: 20px;
-  --images-gap: 10px;
+  --images-gap: var(--decorated-zone-padding);
+  --font-family: "IBM Plex mono", sans-serif;
 }
